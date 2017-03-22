@@ -36,13 +36,14 @@ var aqiData = [
 	if(aqiData[i][1]>60)
 		newArray.push(aqiData[i][0]);
   }
-  
+  var output=" ";
   for(var j=0;j<newArray.length;j++){
-	var newli=document.creatElement("li");
-	var valueli=newArray[j];
-	newli.appendChild(valueli);
-	document.getElementById("aqi-list").appendChild(newli);
-	}
+	output+="<li>第"+(j+1)+"名"+" "+newArray[j]+"</li>";
+	document.getElementById("aqi-list").innerHTML=output;
+  }
+  
+	
+	
 	
 })();
 
