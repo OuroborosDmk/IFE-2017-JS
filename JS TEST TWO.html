@@ -32,7 +32,7 @@ var aqiData = [
   将空气质量指数大于60的城市显示到aqi-list的列表中
   */
   var newArray=new Array;
-  for(var i=0;i<aqiData.length;i++){
+  for(var i in aqiData){
 	if(aqiData[i][1]>60)
 		newArray.push(aqiData[i][0]);
   }
