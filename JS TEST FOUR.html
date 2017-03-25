@@ -2,24 +2,49 @@
 <html>
 <head>
 	<meta charset="UTF-8"/>
+	<style type="text/css">
+		
+	</style>
 </head>
 <body>
-	<input id="output"></input>
-	<input value="leftin" id="leftin">左侧入</input>
-	<input value="rightin" id="rightin">右侧入</input>
-	<input value="leftout" id="leftout">左侧出</input>
-	<input value="rightout" id="rightout">右侧出</input>
-	<input value="10" id="one">10</input>
-	<input value="3" id="two">3</input>
-	<input value="7" id="three">7</input>
-	<input value="12" id="four">12</input>
-	<input value="11" id="five">11</input>
-	<input value="30" id="six">30</input>
+	
+	<input id="input"></input>
+	<input type="button" value="leftin" id="leftin"></input>
+	<input type="button" value="rightin" id="rightin"></input>
+	<input type="button" value="leftout" id="leftout"></input>
+	<input type="button" value="rightout" id="rightout"></input>
 	<script>
-		var input=new Array();
-		function main(){
-			if(document.getElementById("leftin"))
-		}
+		function putin(){
+			var i=document.getElementById("input").value;
+			if(i==""){
+				alert("请输入数值！");
+				return;
+			}
+			var newdiv=document.createElement("div");
+			newdiv.className="newdiv";
+			var newnode=document.createTextNode(i);
+			newdiv.appendChild(newnode);
+			document.body.appendChild(newdiv);
+		}//输入函数
+		function putout(){
+			
+		}//删除节点函数
+		document.getElementById("leftin").onclick=function(){
+			putin();
+			
+			
+		}//左输入函数
+		document.getElementById("rightin").onclick=function(){
+			putin();
+		}//右输入函数
+		document.getElementById("leftout").onclick=function(){
+			putout();
+		}//左输出函数
+		document.getElementById("rightout").onclick=function(){
+			putout();
+		}//右输出函数
+	
+		
 	</script>
 </body>
 </html>
