@@ -13,35 +13,52 @@
 	<input type="button" value="rightin" id="rightin"></input>
 	<input type="button" value="leftout" id="leftout"></input>
 	<input type="button" value="rightout" id="rightout"></input>
+	<div id="output">
+	<ul>
+	</ul>
+	</div>
 	<script>
-		function putin(){
+		document.getElementById("leftin").onclick=function(){
 			var i=document.getElementById("input").value;
 			if(i==""){
 				alert("请输入数值！");
 				return;
 			}
-			var newdiv=document.createElement("div");
+			var newdiv=document.createElement("li");
 			newdiv.className="newdiv";
 			var newnode=document.createTextNode(i);
 			newdiv.appendChild(newnode);
-			document.body.appendChild(newdiv);
-		}//输入函数
-		function putout(){
-			
-		}//删除节点函数
-		document.getElementById("leftin").onclick=function(){
-			putin();
-			
-			
+			document.body.appendChild(newdiv);	
 		}//左输入函数
 		document.getElementById("rightin").onclick=function(){
-			putin();
+			var i=document.getElementById("input").value;
+			if(i==""){
+				alert("请输入数值！");
+				return;
+			}
+			var newdiv=document.createElement("li");
+			newdiv.className="newdiv";
+			var newnode=document.createTextNode(i);
+			newdiv.appendChild(newnode);
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length===0){
+				parent.appendChild(li);
+			}
+			else{
+			parent.insertBefore(li,newli[0]);
+			}
 		}//右输入函数
 		document.getElementById("leftout").onclick=function(){
-			putout();
+			var parent=document.getElementById("output");
+			var li=document.getElementById("output").getElementsByTagName("li");
+			alert("即将消失的数字是"+li[0].innerHTML);
+			parent.removeChild(li[0]);
 		}//左输出函数
 		document.getElementById("rightout").onclick=function(){
-			putout();
+			var parent=document.getElementById("output");
+			var li=document.getElementById("output").getElementsByTagName("li");
+			lert("即将消失的数字是"+li[li.length-1].innerHTML);
+			parent.removeChild(lis[li.length-1]);
 		}//右输出函数
 	
 		
