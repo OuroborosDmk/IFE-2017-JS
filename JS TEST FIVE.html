@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		.newdiv{
+			float:left;
+			background-color:red;
+			width:10px;
+			margin-left:1px;
+			margin-right:1px;
+		}	
+	</style>
+</head>
+<body>
+	<div style="width:100%;height:25px;background-color:#C0C0C0;">
+		<input id="input"></input>
+		<input type="button" value="leftin" id="leftin"></input>
+		<input type="button" value="rightin" id="rightin"></input>
+		<input type="button" value="leftout" id="leftout"></input>
+		<input type="button" value="rightout" id="rightout"></input>
+		<input type="button" value="从小到大排序" id="paixu1"></input>
+		<input type="button" value="从大到小排序" id="paixu2"></input>
+	</div>
+	<div id="output" style="width:100%;height:100px;">
+	</div>
+	<script>
+		function check(x){
+			var reg=/^[1-9]\d*$|^0$/;//正则表达式判断输入
+			if(reg.test(x)==false){
+				alert("请输入整数!");
+				return false;
+			}
+			if(x<10||x>100){
+				alert("数值限制在[10,100]");
+				return false;
+			}
+			return true;
+		}//检查输入函数
+		document.getElementById("rightin").onclick=function(){
+			var newli=document.getElementById("output").getElementsByTagName("div");
+			if(newli.length==60){
+				alert("停止输入!");
+				return;
+			}
+			var output=document.getElementById("output");
+			var input=document.getElementById("input").value;
+			var bool=check(input);
+			if(bool==false)
+				return;
+			var li=document.createElement("div");
+			li.className="newdiv";
+			li.style.height=input+"px";
+			output.appendChild(li);
+		}//右输入函数
+		document.getElementById("leftin").onclick=function(){
+			var newli=document.getElementById("output").getElementsByTagName("div");
+			if(newli.length==60){
+				alert("停止输入!");
+				return;
+			}
+			var output=document.getElementById("output");
+			var input=document.getElementById("input").value;
+			var bool=check(input);
+			if(bool==false)
+				return;
+			var li=document.createElement("div");
+			li.className="newdiv";
+			li.style.height=input+"px";
+			if(newli.length==0){
+				output.appendChild(li);
+			}
+			else{
+				output.insertBefore(li,newli[0]);
+			}
+		}//左输入函数
+		document.getElementById("rightout").onclick=function(){
+			var output=document.getElementById("output");
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length==0){
+				alert("没有数值可以删除!");
+				return;
+			}
+			alert("即将消失的数是："+newli[newli.length-1].innerHTML);
+			output.removeChild(newli[newli.length-1]);
+		}//右输出函数
+		document.getElementById("leftout").onclick=function(){
+			var output=document.getElementById("output");
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length==0){
+				alert("没有数值可以删除!");
+				return;
+			}
+			alert("即将消失的数是："+newli[0].innerHTML);
+			output.removeChild(newli[0]);
+		}//左输出函数
+	</script>
+</body>
+</html>
