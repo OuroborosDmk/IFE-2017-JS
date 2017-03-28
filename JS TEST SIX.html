@@ -19,7 +19,8 @@
 		<input type="button" value="leftin" id="leftin"></input>
 		<input type="button" value="rightin" id="rightin"></input>
 		<input type="button" value="leftout" id="leftout"></input>
-		<input type="button" value="rightout" id="rightout"></input>
+		<input type="button" value="rightout" id="rightout"></input><br>
+		<input type="text" id="newputin" style="width:240px;height:20px;margin-top:5px;"></input>
 		<input type="button" value="查询" id="search"></input>
 	</div>
 	<div id="output" style="width:100%;height:200px;">
@@ -78,7 +79,24 @@
 			output.removeChild(newli[0]);
 		}//左输出函数
 		document.getElementById("search").onclick=function(){
-			
+			var searchvalue=document.getElementById("newputin").value;
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(searchvalue==""){
+				alert("请输入数值!");
+				return;
+			}
+			if(newli.length==0){
+				alert("没有数据可以查询!");
+			}
+			for(var i in newli){
+				var newp=(newli[i].innerHTML).indexOf(searchvalue);
+				if(newp>=0){
+					newli[i].style.backgroundColor="red";
+				}
+				else if(newp==-1){
+					newli[i].style.backgroundColor="#eee";
+				}
+			}
 		}//查询函数
 	</script>
 </body>
