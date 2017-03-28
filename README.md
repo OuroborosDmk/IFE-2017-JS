@@ -8,3 +8,5 @@
 <br>5.http://htmlpreview.github.io/?https://github.com/OuroborosDmk/IFE-2017-JS/blob/master/IFE%20test%205.html
 <br>6.http://htmlpreview.github.io/?https://github.com/OuroborosDmk/IFE-2017-JS/blob/master/IFE%20test%206.html
 <br>7.
+<br>8.
+<br>9.
