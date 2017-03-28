@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		li{
+			float:left;
+			list-style-type:none;
+			background-color:#eee;
+			padding:2px;
+			margin:5px;
+			height:30px;
+		}	
+	</style>
+</head>
+<body>
+	<div style="width:100%;height:200px;">
+		<textarea style="width:240px;height:100px;" id="input"></textarea><br>
+		<input type="button" value="leftin" id="leftin"></input>
+		<input type="button" value="rightin" id="rightin"></input>
+		<input type="button" value="leftout" id="leftout"></input>
+		<input type="button" value="rightout" id="rightout"></input>
+		<input type="button" value="查询" id="search"></input>
+	</div>
+	<div id="output" style="width:100%;height:200px;">
+		<ul>
+		</ul>
+	</div>
+	<script>
+		document.getElementById("rightin").onclick=function(){
+			var output=document.getElementById("output");
+			var input=document.getElementById("input").value;
+			if(input==""){
+				alert("请输入数值!");
+				return;
+			}
+			var li=document.createElement("li");
+			var litext=document.createTextNode(input);
+			li.appendChild(litext);
+			output.appendChild(li);
+		}//右输入函数
+		document.getElementById("leftin").onclick=function(){
+			var output=document.getElementById("output");
+			var input=document.getElementById("input").value;
+			if(input==""){
+				alert("请输入数值!");
+				return;
+			}
+			var li=document.createElement("li");
+			var litext=document.createTextNode(input);
+			li.appendChild(litext);
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length==0){
+				output.appendChild(li);
+			}
+			else{
+				output.insertBefore(li,newli[0]);
+			}
+		}//左输入函数
+		document.getElementById("rightout").onclick=function(){
+			var output=document.getElementById("output");
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length==0){
+				alert("没有数值可以删除!");
+				return;
+			}
+			alert("即将消失的数是："+newli[newli.length-1].innerHTML);
+			output.removeChild(newli[newli.length-1]);
+		}//右输出函数
+		document.getElementById("leftout").onclick=function(){
+			var output=document.getElementById("output");
+			var newli=document.getElementById("output").getElementsByTagName("li");
+			if(newli.length==0){
+				alert("没有数值可以删除!");
+				return;
+			}
+			alert("即将消失的数是："+newli[0].innerHTML);
+			output.removeChild(newli[0]);
+		}//左输出函数
+		document.getElementById("search").onclick=function(){
+			
+		}//查询函数
+	</script>
+</body>
+</html>
