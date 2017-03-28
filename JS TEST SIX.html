@@ -1,3 +1,11 @@
+/*
+1.基于任务四进行升级
+2.将新元素输入框从input改为textarea
+3.允许一次批量输入多个内容，格式可以为数字、中文、英文等，
+可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔
+4.增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，
+将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识
+*/
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,14 +36,6 @@
 		</ul>
 	</div>
 	<script>
-		/*
-		1.基于任务四进行升级
-		2.将新元素输入框从input改为textarea
-		3.允许一次批量输入多个内容，格式可以为数字、中文、英文等，
-		可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔
-		4.增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，
-		将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识
-		*/
 		document.getElementById("rightin").onclick=function(){
 			var output=document.getElementById("output");
 			var input=document.getElementById("input").value;
@@ -43,27 +43,37 @@
 				alert("请输入数值!");
 				return;
 			}
-			var li=document.createElement("li");
-			var litext=document.createTextNode(input);
-			li.appendChild(litext);
-			output.appendChild(li);
+			var newinput=new Array();
+			newinput=input.split(/[,.，。  \n\t、]/);
+			alert("检测到"+newinput.length+"个字符串");
+			for(var i in newinput){
+				var li=document.createElement("li");
+				var litext=document.createTextNode(newinput[i]);
+				li.appendChild(litext);
+				output.appendChild(li);
+			}
 		}//右输入函数
 		document.getElementById("leftin").onclick=function(){
 			var output=document.getElementById("output");
 			var input=document.getElementById("input").value;
+			var newli=document.getElementById("output").getElementsByTagName("li");
 			if(input==""){
 				alert("请输入数值!");
 				return;
 			}
-			var li=document.createElement("li");
-			var litext=document.createTextNode(input);
-			li.appendChild(litext);
-			var newli=document.getElementById("output").getElementsByTagName("li");
-			if(newli.length==0){
-				output.appendChild(li);
-			}
-			else{
-				output.insertBefore(li,newli[0]);
+			var newinput=new Array();
+			newinput=input.split(/[,.，。  \n\t、]/);
+			alert("检测到"+newinput.length+"个字符串");
+			for(var i in newinput){
+				var li=document.createElement("li");
+				var litext=document.createTextNode(newinput[i]);
+				li.appendChild(litext);
+				if(newli.length==0){
+					output.appendChild(li);
+				}
+				else{
+					output.insertBefore(li,newli[0]);
+				}
 			}
 		}//左输入函数
 		document.getElementById("rightout").onclick=function(){
