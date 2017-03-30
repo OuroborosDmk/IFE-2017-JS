@@ -1,0 +1,98 @@
+<!--
+1.基于任务七，参考示例图，将二叉树变成了多叉树，并且每一个节点中带有内容;
+2.提供一个按钮，显示开始遍历，点击后，以动画的形式呈现遍历的过程;
+3.当前被遍历到的节点做一个特殊显示（比如不同的颜色）;
+4.每隔一段时间（500ms，1s等时间自定）再遍历下一个节点;
+5.增加一个输入框及一个“查询”按钮，点击按钮时，开始在树中以动画形式查找节点内容和输入框中内容一致的节点，
+找到后以特殊样式显示该节点，找不到的话给出找不到的提示。查询过程中的展示过程和遍历过程保持一致.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		#tree{
+			position:relative;
+			width:1200px;
+			height:200px;
+			margin: 0 auto;
+			top:200px;
+		}
+		#boxone{
+			position:absolute;
+			width:1200px;
+			height:200px;
+			border:2px solid black;
+			background-color:white;
+			margin:20px;
+		}
+		.boxtwo{
+			position:absolute;
+			height:140px;
+			border:2px solid black;
+			background-color:white;
+			margin:20px;
+		}
+		.boxthree{
+			position:absolute;
+			width:140px;
+			height:80px;
+			border:2px solid black;
+			background-color:white;
+			margin:20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="tree">
+		<div id="boxone"><span>冠位七骑</span>
+			<div class="boxtwo" style="left:0;width:500px;"><span>上三骑</span>
+				<div class="boxthree" style="left:0;"><span>剑</span>
+				</div>
+				<div class="boxthree" style="left:160px;"><span>弓</span>
+				</div>
+				<div class="boxthree" style="right:0;"><span>枪</span>
+				</div>
+			</div>
+			<div class="boxtwo" style="left:520px;width:350px;"><span>下四骑</span>
+				<div class="boxthree" style="left:0;"><span>骑</span>
+				</div>
+				<div class="boxthree" style="right:0;"><span>术</span>
+				</div>
+			</div>
+			<div class="boxtwo" style="right:90px;width:180px;"><span>下四骑</span>
+				<div class="boxthree"><span>杀</span>
+				</div>
+			</div>
+			<div class="boxtwo" style="right:0;width:70px;"><span>狂</span>
+			</div>
+		</div>
+	</div>
+	<div style="position:relative;top:250px;width:480px;margin: 0 auto;">
+		<input id="digui" type="button" value="递归遍历"></input>
+		<input id="guangdu" type="button" value="广度优先"></input>
+		<input id="shendu" type="button" value="深度优先"></input>
+		<input id="clear" type="button" value="清屏"></input>
+		<input id="input" type="text"></input>
+		<input id="search" type="button" value="查询"></input>
+	</div>
+	<script>
+		document.getElementById("digui").onclick=function(){
+			
+		}//递归遍历
+		document.getElementById("guangdu").onclick=function(){
+			
+		}//广度优先遍历
+		document.getElementById("shendu").onclick=function(){
+			
+		}//深度优先遍历
+		document.getElementById("clear").onclick=function(){
+			var clear=document.getElementById("tree").getElementsByTagName("div");
+			clear.style.backgroundColor="white";
+		}//清屏
+		document.getElementById("search").onclick=function(){
+			var input=document.getElementById("input").value;
+		}//查找
+	</script>
+</body>
+</html>
