@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>yaoyaoone</title>
+	<meta charset="UTF-8"/>
+	<style stype="text/css">
+		*{
+			border:0;
+			margin:0;
+		}
+		#cheese{
+			width:600px;
+			margin:0 auto;
+		}
+		.pone{
+			display:inline;
+			font-weight:bold;
+			font-size:18px;
+		}
+		.input{
+			border-radius:10%;
+			width:300px;
+			height:40px;
+			border:2px solid #C0C0C0;
+			margin-top:30px;
+			margin-right:30px;
+			margin-left:30px;
+			font-size:20px;
+		}
+		#cheese button{
+			border-radius:10%;
+			width:80px;
+			height:40px;
+			font-size:20px;
+			color:white;
+			background-color:blue;
+			border:2px solid black;
+			margin-top:20px;
+		}
+		#onecheck,#twocheck,#threecheck{
+			margin-left:70px;
+			font-size:15px;
+			color:#C0C0C0;
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="cheese">
+		<p class="pone">名称</p><input type="text" id="one" class="input"></input><button id="oneput">验证</button><br /><p id="onecheck">必填，长度为4~16个字符</p><br />
+		<p class="pone">名称</p><input type="text" id="two" class="input"></input><button id="twoput">验证</button><br /><p id="twocheck">必填，长度为4~16个字符</p><br />
+		<p class="pone">名称</p><input type="text" id="three" class="input"></input><button id="threeput">验证</button><br /><p id="threecheck">必填，长度为4~16个字符</p><br />
+	</div>
+	<script>
+		document.getElementById("oneput").onclick=function(){
+			var oneinput=document.getElementById("one").value;
+		    var checkmail=document.getElementById("onecheck");
+			check(oneinput,checkmail);
+		}
+		document.getElementById("twoput").onclick=function(){
+			var twoinput=document.getElementById("two").value;
+			var checkmail=document.getElementById("onecheck");
+		}
+		document.getElementById("threeput").onclick=function(){
+			var threeinput=document.getElementById("three").value;
+			var checkmail=document.getElementById("onecheck");
+		}
+		function check(x,y){
+			var changeinput=document.getElementsByClassName("input"); 
+			if(x==""||x==null){
+				y.innerHtml="姓名不能为空";
+				y.style.color="red";
+				changeinput.style.backgroundColor="red";
+				changeinput.style.borderColor="red";
+				alert("3");
+			}
+		}
+	</script>
+</body>
+</html>
