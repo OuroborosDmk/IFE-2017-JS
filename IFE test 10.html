@@ -1,3 +1,10 @@
+<!--
+如示例图中所示，在页面中实现一个输入框与按钮，要求点击验证按钮后，对输入框中内容进行格式校验，并在其下方显示校验结果
+校验规则：
+1.字符数为4~16位;
+2.每个英文字母、数字、英文符号长度为1;
+3.每个汉字，中文符号长度为2.
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +24,7 @@
 			font-weight:bold;
 			font-size:18px;
 		}
-		.input{
+		#cheese input{
 			border-radius:10%;
 			width:300px;
 			height:40px;
@@ -26,6 +33,7 @@
 			margin-right:30px;
 			margin-left:30px;
 			font-size:20px;
+			outline:none;//去除蓝色边框
 		}
 		#cheese button{
 			border-radius:10%;
@@ -47,33 +55,71 @@
 </head>
 <body>
 	<div id="cheese">
-		<p class="pone">名称</p><input type="text" id="one" class="input"></input><button id="oneput">验证</button><br /><p id="onecheck">必填，长度为4~16个字符</p><br />
-		<p class="pone">名称</p><input type="text" id="two" class="input"></input><button id="twoput">验证</button><br /><p id="twocheck">必填，长度为4~16个字符</p><br />
-		<p class="pone">名称</p><input type="text" id="three" class="input"></input><button id="threeput">验证</button><br /><p id="threecheck">必填，长度为4~16个字符</p><br />
+		<p class="pone">名称</p><input type="text" id="one"></input><button id="oneput">验证</button><br /><p id="onecheck">必填，长度为4~16个字符</p><br />
+		<p class="pone">名称</p><input type="text" id="two"></input><button id="twoput">验证</button><br /><p id="twocheck">必填，长度为4~16个字符</p><br />
+		<p class="pone">名称</p><input type="text" id="three"></input><button id="threeput">验证</button><br /><p id="threecheck">必填，长度为4~16个字符</p><br />
 	</div>
 	<script>
 		document.getElementById("oneput").onclick=function(){
-			var oneinput=document.getElementById("one").value;
+			var oneinput=document.getElementById("one");
 		    var checkmail=document.getElementById("onecheck");
-			check(oneinput,checkmail);
+			var abs=check(oneinput.value,checkmail);
+			if(abs==false){
+				oneinput.style.borderColor="red";
+				
+				return;
+			}
+			checkmail.innerHTML="姓名格式正确";
+			oneinput.style.borderColor="green";
+			checkmail.style.color="green";
 		}
 		document.getElementById("twoput").onclick=function(){
-			var twoinput=document.getElementById("two").value;
-			var checkmail=document.getElementById("onecheck");
+			var twoinput=document.getElementById("two");
+			var checkmail=document.getElementById("twocheck");
+			var abs=check(twoinput.value,checkmail);
+			if(abs==false){
+				twoinput.style.borderColor="red";
+				
+				return;
+			}
+			checkmail.innerHTML="姓名格式正确";
+			twoinput.style.borderColor="green";
+			checkmail.style.color="green";
 		}
 		document.getElementById("threeput").onclick=function(){
-			var threeinput=document.getElementById("three").value;
-			var checkmail=document.getElementById("onecheck");
+			var threeinput=document.getElementById("three");
+			var checkmail=document.getElementById("threecheck");
+			var abs=check(threeinput.value,checkmail);
+			if(abs==false){
+				threeinput.style.borderColor="red";
+				
+				return;
+			}
+			checkmail.innerHTML="姓名格式正确";
+			threeinput.style.borderColor="green";
+			checkmail.style.color="green";
 		}
 		function check(x,y){
-			var changeinput=document.getElementsByClassName("input"); 
-			if(x==""||x==null){
-				y.innerHtml="姓名不能为空";
+			x=x.trim();//去除空白
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="姓名不能为空";
 				y.style.color="red";
-				changeinput.style.backgroundColor="red";
-				changeinput.style.borderColor="red";
-				alert("3");
+			
+				return false;
 			}
+			var len=0;//用户输入的字符串的长度
+			for(var i=0;i<x.length;i++){
+				if(x.charCodeAt(i)>=0x00&&x.charCodeAt(i)<=0xFF)//判断是否为英文字符
+					len++;
+				else//如果是中文字符
+					len+=2;
+			}
+			if(len<4||len>16){//判断字符串长度
+				y.innerHTML="名称格式错误";
+				y.style.color="red";
+				
+				return false;
+			}//检查函数
 		}
 	</script>
 </body>
