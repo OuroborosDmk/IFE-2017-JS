@@ -1,0 +1,113 @@
+<!--
+如示例图中所示，基于上一个任务，在页面中添加多个表单
+要求:
+1.表单获得焦点时，下方显示表单填写规则;
+2.表单失去焦点时校验表单内容;
+3.校验结果正确时，表单边框显示绿色，并在下方显示验证通过的描述文字;
+4.校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字;
+5.点击提交按钮时，对页面中所有输入进行校验，校验结果显示方式同上。若所有表单校验通过，弹窗显示“提交成功”，否则显示“提交失败”;
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>yaoyaoone</title>
+	<meta charset="UTF-8"/>
+	<style stype="text/css">
+		*{
+			border:0;
+			margin:0;
+		}
+		#cheese{
+			width:600px;
+			margin:0 auto;
+		}
+		.pone{
+			display:inline;
+			font-weight:bold;
+			font-size:18px;
+		}
+		#cheese input{
+			border-radius:10%;
+			width:300px;
+			height:40px;
+			border:2px solid #C0C0C0;
+			margin-top:30px;
+			margin-right:30px;
+			margin-left:30px;
+			font-size:20px;
+			outline:none;//去除蓝色边框
+		}
+		#cheese button{
+			border-radius:10%;
+			width:80px;
+			height:40px;
+			font-size:20px;
+			color:white;
+			background-color:blue;
+			border:2px solid black;
+			margin-top:20px;
+		}
+		#onecheck,#twocheck,#threecheck{
+			margin-left:70px;
+			font-size:15px;
+			color:#C0C0C0;
+			
+		}
+	</style>
+</head>
+<body>
+	<div id="cheese">
+		<p class="pone">名称</p><input type="text" id="one"></input><br /><p id="theone"></p><br />
+		<p class="pone">密码</p><input type="text" id="two"></input><br /><p id="thetwo"></p><br />
+		<p class="pone">密码确认</p><input type="text" id="three"></input><br /><p id="thethree"></p><br />
+		<p class="pone">邮箱</p><input type="text" id="four"></input><br /><p id="thefour"></p><br />
+		<p class="pone">手机</p><input type="text" id="five"></input><br /><p id="thefive"></p><br />
+		<button id="put">提交</button>
+	</div>
+	<script>
+		document.getElementById("put").onclick=function(){
+			var getone=document.getElementById("one");
+			var gettwo=docuemnt.getElementById("two");
+			var getthree=document.getElementById("three");
+			var getfour=document.getElementById("four");
+			var getfive=document.getElementById("five");
+			
+				var abs=check(oneinput[i].value,checkmail);
+					if(abs==false){
+						oneinput[i].style.borderColor="red";
+				
+					return;
+				}
+			}
+			checkmail.innerHTML="姓名格式正确";
+			oneinput[i].style.borderColor="green";
+			checkmail.style.color="green";
+		}
+		
+		function check(x,y){
+			x=x.trim();//去除空白
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="姓名不能为空";
+				y.style.color="red";
+			
+				return false;
+			}
+			var len=0;//用户输入的字符串的长度
+			for(var i=0;i<x.length;i++){
+				if(x.charCodeAt(i)>=0x00&&x.charCodeAt(i)<=0xFF)//判断是否为英文字符
+					len++;
+				else//如果是中文字符
+					len+=2;
+			}
+			if(len<4||len>16){//判断字符串长度
+				y.innerHTML="名称格式错误";
+				y.style.color="red";
+				
+				return false;
+			}//检查函数
+			
+		function 
+		}
+	</script>
+</body>
+</html>
