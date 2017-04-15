@@ -65,12 +65,27 @@
 		<button id="put">提交</button>
 	</div>
 	<script>
-		document.getElementById("put").onclick=function(){
+		function checkone(){
 			var getone=document.getElementById("one");
+		}
+		function checktwo(){
 			var gettwo=docuemnt.getElementById("two");
+		}
+		function checkthree(){
 			var getthree=document.getElementById("three");
+		}
+		function checkfour(){
 			var getfour=document.getElementById("four");
+		}
+		function checkfive(){
 			var getfive=document.getElementById("five");
+		}
+		document.getElementById("put").onclick=function(){
+			checkone();
+			checktwo();
+			checkthree();
+			checkfour();
+			checkfive();
 			
 				var abs=check(oneinput[i].value,checkmail);
 					if(abs==false){
@@ -78,12 +93,11 @@
 				
 					return;
 				}
-			}
+			
 			checkmail.innerHTML="姓名格式正确";
 			oneinput[i].style.borderColor="green";
 			checkmail.style.color="green";
 		}
-		
 		function check(x,y){
 			x=x.trim();//去除空白
 			if(x==""||x==null){//判断是否为空
