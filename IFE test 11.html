@@ -4,13 +4,13 @@
 1.表单获得焦点时，下方显示表单填写规则;
 2.表单失去焦点时校验表单内容;
 3.校验结果正确时，表单边框显示绿色，并在下方显示验证通过的描述文字;
-4.校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字;
-5.点击提交按钮时，对页面中所有输入进行校验，校验结果显示方式同上。若所有表单校验通过，弹窗显示“提交成功”，否则显示“提交失败”;
+4.校验结果错误时，表单边框显示红色，并在下方显示验证错误的描述文字;get
+5.点击提交按钮时，对页面中所有输入进行校验，校验结果显示方式同上。若所有表单校验通过，弹窗显示“提交成功”，否则显示“提交失败”;get
 -->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>yaoyaoone</title>
+	<title>yaoyaotwo</title>
 	<meta charset="UTF-8"/>
 	<style stype="text/css">
 		*{
@@ -30,8 +30,8 @@
 			border-radius:10%;
 			width:300px;
 			height:40px;
-			border:2px solid #C0C0C0;
 			margin-top:30px;
+			border:2px solid black;
 			margin-right:30px;
 			margin-left:30px;
 			font-size:20px;
@@ -44,61 +44,161 @@
 			font-size:20px;
 			color:white;
 			background-color:blue;
-			border:2px solid black;
 			margin-top:20px;
 		}
-		#onecheck,#twocheck,#threecheck{
+		#theone,#thetwo,#thethree,#thefour,#thefive{
 			margin-left:70px;
-			font-size:15px;
-			color:#C0C0C0;
-			
+			font-size:14px;
+			color:#COCOCO;
 		}
 	</style>
 </head>
 <body>
 	<div id="cheese">
 		<p class="pone">名称</p><input type="text" id="one"></input><br /><p id="theone"></p><br />
-		<p class="pone">密码</p><input type="text" id="two"></input><br /><p id="thetwo"></p><br />
-		<p class="pone">密码确认</p><input type="text" id="three"></input><br /><p id="thethree"></p><br />
-		<p class="pone">邮箱</p><input type="text" id="four"></input><br /><p id="thefour"></p><br />
+		<p class="pone">密码</p><input type="password" id="two"></input><br /><p id="thetwo"></p><br />
+		<p class="pone">密码确认</p><input type="password" id="three"></input><br /><p id="thethree"></p><br />
+		<p class="pone">邮箱</p><input type="email" id="four"></input><br /><p id="thefour"></p><br />
 		<p class="pone">手机</p><input type="text" id="five"></input><br /><p id="thefive"></p><br />
 		<button id="put">提交</button>
 	</div>
 	<script>
-		function checkone(){
-			var getone=document.getElementById("one");
-		}
-		function checktwo(){
-			var gettwo=docuemnt.getElementById("two");
-		}
-		function checkthree(){
-			var getthree=document.getElementById("three");
-		}
-		function checkfour(){
-			var getfour=document.getElementById("four");
-		}
-		function checkfive(){
-			var getfive=document.getElementById("five");
-		}
-		document.getElementById("put").onclick=function(){
+		var password=document.getElementById("two").value;
+		var count=0;
+		document.getElementById("put").onclick=function(){                                  
 			checkone();
 			checktwo();
 			checkthree();
 			checkfour();
 			checkfive();
-			
-				var abs=check(oneinput[i].value,checkmail);
-					if(abs==false){
-						oneinput[i].style.borderColor="red";
-				
-					return;
-				}
-			
-			checkmail.innerHTML="姓名格式正确";
-			oneinput[i].style.borderColor="green";
-			checkmail.style.color="green";
+			if(count==5){
+				alert("提交成功！");
+			}
+			else
+				alert("提交失败！");
 		}
-		function check(x,y){
+		//
+		document.getElementById("one").onfocus=function(){
+			var getone=document.getElementById("one");
+			var onealert=document.getElementById("theone");
+			onealert.innerHTML="输入名字长度为4到16，其中中文字符占两个长度";
+			getone.style.borderColor="black";
+			onealert.style.color="grey";
+		}
+		document.getElementById("one").onblur=function(){
+			checkone();
+		}
+		function checkone(){
+			var getone=document.getElementById("one");
+			var onealert=document.getElementById("theone");
+			var abs=checkname(getone.value,onealert);
+			if(abs==false){
+				getone.style.borderColor="red";
+				return;
+			}
+			onealert.innerHTML="姓名格式正确";
+			getone.style.borderColor="green";
+			onealert.style.color="green";
+			count++;
+		}
+		//
+		document.getElementById("two").onfocus=function(){
+			var gettwo=document.getElementById("two");
+			var twoalert=document.getElementById("thetwo");
+			twoalert.innerHTML="密码长度请小于16";
+			gettwo.style.borderColor="black";
+			twoalert.style.color="grey";
+		}
+		document.getElementById("two").onblur=function(){
+			checktwo();
+		}
+		function checktwo(){
+			var gettwo=document.getElementById("two");
+			var twoalert=document.getElementById("thetwo");
+			var abs=checkpassword(gettwo.value,twoalert);
+			if(abs==false){
+				gettwo.style.borderColor="red";
+				return;
+			}
+			twoalert.innerHTML="密码输入正确";
+			gettwo.style.borderColor="green";
+			twoalert.style.color="green";
+			count++;
+		}
+		//
+		document.getElementById("three").onfocus=function(){
+			var getthree=document.getElementById("three");
+			var threealert=document.getElementById("thethree");
+			threealert.innerHTML="请确保两次输入密码一致";
+			getthree.style.borderColor="black";
+			threealert.style.color="grey";
+		}
+		document.getElementById("three").onblur=function(){
+			checkthree();
+		}
+		function checkthree(){
+			var getthree=document.getElementById("three");
+			var threealert=document.getElementById("thethree");
+			var abs=checkpasswordagain(getthree.value,threealert);
+			if(abs==false){
+				getthree.style.borderColor="red";
+				return;
+			}
+			threealert.innerHTML="确认密码输入一致";
+			getthree.style.borderColor="green";
+			threealert.style.color="green";
+			count++;
+		}
+		//
+		document.getElementById("four").onfocus=function(){
+			var getfour=document.getElementById("four");
+			var fouralert=document.getElementById("thefour");
+			fouralert.innerHTML="请输入正确的com邮箱";
+			getfour.style.borderColor="black";
+			fouralert.style.color="grey";
+		}
+		document.getElementById("four").onblur=function(){
+			checkfour();
+		}
+		function checkfour(){
+			var getfour=document.getElementById("four");
+			var fouralert=document.getElementById("thefour");
+			var abs=checkemail(getfour.value,fouralert);
+			if(abs==false){
+				getfour.style.borderColor="red";
+				return;
+			}
+			fouralert.innerHTML="邮箱格式正确";
+			getfour.style.borderColor="green";
+			fouralert.style.color="green";
+			count++;
+		}
+		//
+		document.getElementById("five").onfocus=function(){//获得焦点
+			var getfive=document.getElementById("five");
+			var fivealert=document.getElementById("thefive");
+			fivealert.innerHTML="输入长度为3到11的电话";
+			getfive.style.borderColor="black";
+			fivealert.style.color="grey";
+		}
+		document.getElementById("five").onblur=function(){//失去焦点
+			checkfive();
+		}
+		function checkfive(){
+			var getfive=document.getElementById("five");
+			var fivealert=document.getElementById("thefive");
+			var abs=checkphone(getfive.value,fivealert);
+			if(abs==false){
+				getfive.style.borderColor="red";
+				return;
+			}
+			fivealert.innerHTML="电话格式正确";
+			getfive.style.borderColor="green";
+			fivealert.style.color="green";
+			count++;
+		}
+		//
+		function checkname(x,y){//检查名字格式
 			x=x.trim();//去除空白
 			if(x==""||x==null){//判断是否为空
 				y.innerHTML="姓名不能为空";
@@ -118,9 +218,69 @@
 				y.style.color="red";
 				
 				return false;
-			}//检查函数
+			}
+		}
+		function checkpassword(x,y){//检查密码格式	
+			x=x.trim();
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="密码不能为空";
+				y.style.color="red";
 			
-		function 
+				return false;
+			}
+			if(x.length>20){
+				y.innerHTML="密码长度过长";
+				y.style.color="red";
+			
+				return false;
+			}
+		}
+		function checkpasswordagain(x,y){
+			x=x.trim();
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="确认密码不能为空";
+				y.style.color="red";
+			
+				return false;
+			}
+			if(x!=password){
+				y.innerHTML="两次密码输入不一致";
+				y.style.color="red";
+				
+				return false;
+			}
+		}
+		function checkemail(x,y){//检查邮箱格式
+			x=x.trim();
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="邮箱不能为空";
+				y.style.color="red";
+			
+				return false;
+			}
+			var email=/^\w+@\w+.com$/;
+			if(email.test(x)==false||x.length>40){
+				y.innerHTML="邮箱格式错误";
+				y.style.color="red";
+				
+				return false;
+			}
+		}
+		function checkphone(x,y){//检查电话格式
+			x=x.trim();
+			if(x==""||x==null){//判断是否为空
+				y.innerHTML="电话不能为空";
+				y.style.color="red";
+			
+				return false;
+			}
+			var phone=/^[1-9]\d{2,10}$/;
+			if(phone.test(x)==false){
+				y.innerHTML="电话格式错误";
+				y.style.color="red";
+				
+				return false;
+			}
 		}
 	</script>
 </body>
