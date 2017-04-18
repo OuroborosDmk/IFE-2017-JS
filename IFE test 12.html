@@ -17,17 +17,59 @@
 		p{
 			display:inline;
 		}
+		input{
+			margin-left:50px;
+			border-radius:5px;
+			border:2px solid grey;
+		}
+		#work input{
+			margin-left:50px;
+			border-radius:5px;
+			border:2px solid grey;
+			height:30px;
+		}
+		#cheese{
+			width:600px;
+			margin:0 auto;
+		}
+		select{
+			border-radius:5px;
+			border:2px solid grey;
+			width:100px;
+			height:30px;
+			margin-left:30px;
+		}
+		.class1{
+			margin-top:50px;
+		}
+		.class2{
+			margin-top:50px;
+			display:none;			
+		}
 	</style>
 </head>
 <body>
-	<form id="choose">
-		<input type="radio" name="work" value="school" checked>在校生</input>
-		<input type="radio" name="work" value="work">非在校生</input>
-	</form>
-	<div id="school"><p>学校</p><select></select><select></select></div>
-	<div id="work"><p>就业单位</p><input type="text"></input></div>
+	<div id="cheese">
+		<form id="choose">
+			<input type="radio" name="work" value="school" checked>在校生</input>
+			<input type="radio" name="work" value="work">非在校生</input>
+		</form>
+		<div id="school" class="class1"><p>学校</p><select><option>北京</option></select><select><option>北京大学</option></select></div>
+		<div id="work" class="class2"><p>就业单位</p><input type="text"></input></div>
+	</div>
 	<script>
-		
+		document.getElementById("choose").children[0].onclick=function(){
+			var school=document.getElementById("school");
+			var work=document.getElementById("work");
+			school.className="class1";
+			work.className="class2";
+		}
+		document.getElementById("choose").children[1].onclick=function(){
+			var school=document.getElementById("school");
+			var work=document.getElementById("work");
+			work.className="class1";
+			school.className="class2";
+		}
 	</script>
 </body>
 </html>
