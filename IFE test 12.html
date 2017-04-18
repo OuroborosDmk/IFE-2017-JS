@@ -89,21 +89,20 @@
 		<div id="work" class="class2"><p>就业单位</p><input type="text"></input></div>
 	</div>
 	<script>
-		document.getElementById("choose").children[0].onclick=function(){
+		document.getElementById("choose").children[0].onclick=function(){//选择在校生
 			var school=document.getElementById("school");
 			var work=document.getElementById("work");
 			school.className="class1";
 			work.className="class2";
 		}
-		document.getElementById("choose").children[1].onclick=function(){
+		document.getElementById("choose").children[1].onclick=function(){//选择非在校生
 			var school=document.getElementById("school");
 			var work=document.getElementById("work");
 			work.className="class1";
 			school.className="class2";
 		}
-		document.getElementById("choosetwo").onchange=function(){
+		document.getElementById("choosetwo").onchange=function(){//当表单值获得改变时，选择省份
 			var v=document.getElementById("choosetwo").value;
-			alert(v);
 			if(v=="BJ"){
 				document.getElementById("BJ").className="class4";
 				document.getElementById("SD").className="class3";
