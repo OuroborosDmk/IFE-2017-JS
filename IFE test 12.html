@@ -46,7 +46,17 @@
 			margin-top:50px;
 			display:none;			
 		}
-	</style>
+		.class3{
+			display:none;
+		}
+		.class4{
+			border-radius:5px;
+			border:2px solid grey;
+			width:100px;
+			height:30px;
+			margin-left:30px;
+		}	
+		</style>
 </head>
 <body>
 	<div id="cheese">
@@ -54,7 +64,28 @@
 			<input type="radio" name="work" value="school" checked>在校生</input>
 			<input type="radio" name="work" value="work">非在校生</input>
 		</form>
-		<div id="school" class="class1"><p>学校</p><select><option>北京</option></select><select><option>北京大学</option></select></div>
+		<div id="school" class="class1"><p>学校</p>
+			<select id="choosetwo">
+				<option value="BJ" checked>北京</option>
+				<option value="SD">山东</option>
+				<option value="LN">辽宁</option>
+			</select>
+			<select id="BJ">
+				<option>北京大学</option>
+				<option>清华大学</option>
+				<option>北京邮电大学</option>
+			</select>
+			<select id="SD" class="class3">
+				<option>山东大学</option>
+				<option>青岛海洋大学</option>
+				<option>中国石油大学</option>
+			</select>
+			<select id="LN" class="class3">
+				<option>东北大学</option>
+				<option>大连理工大学</option>
+				<option>辽宁大学</option>
+			</select>
+		</div>
 		<div id="work" class="class2"><p>就业单位</p><input type="text"></input></div>
 	</div>
 	<script>
@@ -69,6 +100,25 @@
 			var work=document.getElementById("work");
 			work.className="class1";
 			school.className="class2";
+		}
+		document.getElementById("choosetwo").onchange=function(){
+			var v=document.getElementById("choosetwo").value;
+			alert(v);
+			if(v=="BJ"){
+				document.getElementById("BJ").className="class4";
+				document.getElementById("SD").className="class3";
+				document.getElementById("LN").className="class3";
+			}
+			else if(v=="SD"){
+				document.getElementById("SD").className="class4";
+				document.getElementById("BJ").className="class3";
+				document.getElementById("LN").className="class3";
+			}
+			else if(v=="LN"){
+				document.getElementById("LN").className="class4";
+				document.getElementById("BJ").className="class3";
+				document.getElementById("SD").className="class3";
+			}
 		}
 	</script>
 </body>
