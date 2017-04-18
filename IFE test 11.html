@@ -63,7 +63,7 @@
 		<button id="put">提交</button>
 	</div>
 	<script>
-		var password=document.getElementById("two").value;
+		var password;
 		var count=0;
 		document.getElementById("put").onclick=function(){                                  
 			checkone();
@@ -113,6 +113,7 @@
 			checktwo();
 		}
 		function checktwo(){
+		    password=document.getElementById("two").value;
 			var gettwo=document.getElementById("two");
 			var twoalert=document.getElementById("thetwo");
 			var abs=checkpassword(gettwo.value,twoalert);
@@ -144,7 +145,7 @@
 				getthree.style.borderColor="red";
 				return;
 			}
-			threealert.innerHTML="确认密码输入一致";
+			threealert.innerHTML="两次密码输入一致";
 			getthree.style.borderColor="green";
 			threealert.style.color="green";
 			count++;
@@ -243,6 +244,8 @@
 			
 				return false;
 			}
+			alert(password);
+			alert(x);
 			if(x!=password){
 				y.innerHTML="两次密码输入不一致";
 				y.style.color="red";
