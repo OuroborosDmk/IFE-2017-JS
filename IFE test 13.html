@@ -1,5 +1,11 @@
 <!--
-
+1.如图，实现一个类似棋盘的格子空间，每个格子用两个数字可以定位，一个红正方形的DOM在这个空间内，正方形中的蓝色边表示这是他的正面，有一个input输入框
+2.在输入框中允许输入如下指令，按下按钮后，使得正方形做相应动作
+GO：向蓝色边所面向的方向前进一格（一格等同于正方形的边长）
+TUN LEF：向左转（逆时针旋转90度）
+TUN RIG：向右转（顺时针旋转90度）
+TUN BAC：向右转（旋转180度）
+3.移动不能超出格子空间
 -->
 <!DOCTYPE html>
 <html>
@@ -11,12 +17,62 @@
 			border:0;
 			margin:0;
 		}
-		
+		html{
+			width:100%;
+			height:100%;
+		}
+		body{
+			width:100%;
+			height:100%;
+			display:-webkit-flex;
+			display:flex;
+			display:-moz-flex;
+			display:-o-flex;
+			justify-content:center;
+			align-items:center;
+			flex-direction:column;
+		}
+		#cheese{
+			display:flex;
+			display:-webkit-flex;
+			display:-moz-flex;
+			display:-o-flex;
+			flex-wrap:wrap;
+			width:398px;
+			height:398px;
+			border:5px solid black;
+		}
+		#cheese div{
+			width:38.2px;
+			height:38.2px;
+			border:1px solid grey;
+		}
+		#getinput{
+			border:2px solid black;
+			margin-top:20px;
+			margin-right:30px;
+		}
+		#go{
+			border:1px solid black;
+		}
 	</style>
 </head>
 <body>
+	<div id="cheese">
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+	</div>
+	<div><input id="getinput" type="text"></input><input type="button" value="执行" id="go"></input></div>
 	<script>
-		
+		//思路为获得方块所在DIV的样式，通过样式来判断坐标的增减
 	</script>
 </body>
 </html>
