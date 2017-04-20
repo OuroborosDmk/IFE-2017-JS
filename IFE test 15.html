@@ -1,0 +1,82 @@
+<!--
+参考如下设计图，实现一个浮出层的UI组件实现
+浮出层的中心默认在屏幕正中
+当浮出层显示时，屏幕滚动时，浮出层始终保持位置固定在屏幕正中，不随屏幕滚动而变化位置。或者禁止页面在有浮出层出现时滚动
+当浮出层显示时，点击浮出层以外的部分，默认为关闭浮出层。可以实现一个半透明的遮罩来挡住浮出层外的部分
+浮出层的样式、内容和逻辑尽量解耦
+提供使用JavaScript控制浮出层展现和关闭的接口
+浮出层的窗口大小可以是一个默认固定值，也可以是随内容变化而自适应变化，也可以是通过接口参数进行调整，自行根据自己能力进行选择
+有能力的同学可以实现浮出层的拖拽移动浮出窗口位置以及拖拽边缘来放大缩小浮出窗口的功能
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>yaoyaosix</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	#floatdiv{
+		position:fixed;
+		display:none;
+		border:2px solid black;
+		z-index:20;
+		background-color:white;
+		top:50%;
+		left:50%;
+	}
+	#cover{
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		position:fixed;
+		display:none;
+		z-index:10;
+		background-color:grey;
+		opacity:0.4;
+	}
+	</style>
+</head>
+<body>
+	<div style="z-index:1;margin:0 auto;margin-top:100px;width:200px;border:2px solid black;">
+		<form>
+			<p>输入浮出层高度: <input type="text" id="height" name="height"></input></p>
+			<p>输入浮出层宽度: <input type="text" id="width" name="width"></input></p>
+		</form>
+		<input type="button" value="提交" id="getinput"></input>
+	</div>
+	<div id="floatdiv">
+		<div style="background-color:grey;width:100%;height:30%;"><p>这是一个浮出层</p></div>
+		<div>
+			<p>这是一个浮出层</p>
+			<button id="back">确定</button>
+		</div>
+	</div>
+	<div id="cover"></div>
+	<script>
+		document.getElementById("getinput").onclick=function(){
+			var height=document.getElementById("height").value;
+			var width=document.getElementById("width").value;
+			var floatdiv=document.getElementById("floatdiv");
+			var cover=document.getElementById("cover");
+			floatdiv.style.width=width+"px";
+			floatdiv.style.height=height+"px";
+			floatdiv.style.display="block";
+			cover.style.display="block";
+			floatdiv.style.marginTop=(-height/2)+"px";
+			floatdiv.style.marginLeft=(-width/2)+"px";
+		}
+		document.getElementById("back").onclick=function(){
+			document.getElementById("floatdiv").style.display="none";
+			document.getElementById("cover").style.display="none";
+		}
+		document.getElementById("cover").onclick=function(){
+			document.getElementById("floatdiv").style.display="none";
+			document.getElementById("cover").style.display="none";
+		}
+	</script>
+</body>
+</html>
