@@ -47,32 +47,61 @@ TUN BAC：向右转（旋转180度）
 			height:38.2px;
 			border:1px solid grey;
 		}
-		#getinput{
-			border:2px solid black;
+		input{
+			border:1px solid black;
 			margin-top:20px;
 			margin-right:30px;
 		}
-		#go{
-			border:1px solid black;
-		}
+		.class1{
+		
+		}//方块朝上
+		.class2{
+		
+		}//方块朝右
+		.class3{
+		
+		}//方块朝左
+		.class4{
+		
+		}//方块朝下
 	</style>
 </head>
 <body>
 	<div id="cheese">
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-		<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+		<div id="11"></div><div id="12"></div><div id="13"></div><div id="14"></div><div id="15"></div><div id="16"></div><div id="17"></div><div id="18"></div><div id="19"></div><div id="110"></div>
+		<div id="21"></div><div id="22"></div><div id="23"></div><div id="24"></div><div id="25"></div><div id="26"></div><div id="27"></div><div id="28"></div><div id="29"></div><div id="210"></div>
+		<div id="31"></div><div id="32"></div><div id="33"></div><div id="34"></div><div id="35"></div><div id="36"></div><div id="37"></div><div id="38"></div><div id="39"></div><div id="310"></div>
+		<div id="41"></div><div id="42"></div><div id="43"></div><div id="44"></div><div id="45"></div><div id="46"></div><div id="47"></div><div id="48"></div><div id="49"></div><div id="410"></div>
+		<div id="51"></div><div id="52"></div><div id="53"></div><div id="54"></div><div id="55"></div><div id="56"></div><div id="57"></div><div id="58"></div><div id="59"></div><div id="510"></div>
+		<div id="61"></div><div id="62"></div><div id="63"></div><div id="64"></div><div id="65"></div><div id="66"></div><div id="67"></div><div id="68"></div><div id="69"></div><div id="610"></div>
+		<div id="71"></div><div id="72"></div><div id="73"></div><div id="74"></div><div id="75"></div><div id="76"></div><div id="77"></div><div id="78"></div><div id="79"></div><div id="710"></div>
+		<div id="81"></div><div id="82"></div><div id="83"></div><div id="84"></div><div id="85"></div><div id="86"></div><div id="87"></div><div id="88"></div><div id="89"></div><div id="810"></div>
+		<div id="91"></div><div id="92"></div><div id="93"></div><div id="94"></div><div id="95"></div><div id="96"></div><div id="97"></div><div id="98"></div><div id="99"></div><div id="910"></div>
+		<div id="101"></div><div id="102"></div><div id="103"></div><div id="104"></div><div id="105"></div><div id="106"></div><div id="107"></div><div id="108"></div><div id="109"></div><div id="1010"></div>
 	</div>
-	<div><input id="getinput" type="text"></input><input type="button" value="执行" id="go"></input></div>
+	<div>
+		<input id="go" type="button" value="GO"></input>
+		<input id="tright" type="button" value="TUN LEF"></input>
+		<input id="tleft" type="button" value="TUN RIG"></input>
+		<input id="tback" type="button" value="TUN BAC"></input>
+	</div>
 	<script>
-		//思路为获得方块所在DIV的样式，通过样式来判断坐标的增减
+		//strat坐标为(6,6)
+		var x=6;
+		var y=6;
+		//思路为获得方块所在DIV的样式，通过样式来判断方向以及坐标的增减
+		document.getElementById("go").onclick=function(){
+			
+		}//向前走函数
+		document.getElementById("tright").onclick=function(){
+			
+		}//向右转函数
+		document.getElementById("tleft").onclick=function(){
+			
+		}//向左转函数
+		document.getElementById("tback").onclick=function(){
+			
+		}//向后转函数
 	</script>
 </body>
 </html>
