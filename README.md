@@ -14,3 +14,5 @@
 <br />11.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2011.html
 <br />12.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2012.html
 <br />13.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2013.html(施工中)
+<br />14.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2014.html(施工中)
+<br />15.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2015.html
