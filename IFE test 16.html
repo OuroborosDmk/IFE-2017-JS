@@ -1,0 +1,76 @@
+<!--
+参考下方设计图，实现一个支持列排序的表格组件
+提供生成表格的接口，表格中的数据，表格样式尽量低耦合
+可以配置对哪些列支持排序功能，并在表头进行排序按钮的显示，图中的样式为示意参考，可自行设定样式及交互方式
+提供点击排序按钮后的响应接口，并提供默认的排序方法，当提供的接口没有具体实现时，按默认的排序方法进行排序操作，并更新表格中的数据显示。
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>yaoyaoseven</title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	table{
+		margin:0 auto;
+		width:400px;
+		text-align:center;
+	}
+	form{
+		width:400px;
+		margin:0 auto;
+		margin-top:100px;
+	}
+	</style>
+</head>
+<body>
+	<table id="table" border="1">
+		<tr>
+			<th>姓名</th>
+			<th>语文</th>
+			<th>数学</th>
+			<th>英语</th>
+			<th>总分</th>
+		</tr>
+	</table>
+	<form>
+		<p>请输入数据</p>
+		<p>姓名： <input type="text" id="name" name="name"></input></p>
+		<p>语文： <input type="text" id="ch" name="chinese"></input></p>
+		<p>数学： <input type="text" id="math" name="math"></input></p>
+		<p>英语： <input type="text" id="en" name="english"></input></p>
+		<input type="button" id="getinput" value="提交"></input>
+	</form>
+	<script>
+		document.getElementById("getinput").onclick=function(){
+			var ch=document.getElementById("ch").value;
+			var name=document.getElementById("name").value;
+			var math=document.getElementById("math").value;
+			var en=document.getElementById("en").value;
+			var table=document.getElementById("table");
+			var total=parseInt(ch)+parseInt(math)+parseInt(en);
+			var newtr=document.createElement("tr");
+			table.appendChild(newtr);
+			var newch=document.createElement("td");
+			var newname=document.createElement("td");
+			var newmath=document.createElement("td");
+			var newen=document.createElement("td");
+			var newtotal=document.createElement("td");
+			newtr.appendChild(newname);
+			newtr.appendChild(newch);
+			newtr.appendChild(newmath);
+			newtr.appendChild(newen);
+			newtr.appendChild(newtotal);
+			newch.innerHTML=ch;
+			newname.innerHTML=name;
+			newmath.innerHTML=math;
+			newen.innerHTML=en;
+			newtotal.innerHTML=total;
+		}
+		
+	</script>
+</body>
+</html>
