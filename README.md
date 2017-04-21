@@ -1,6 +1,7 @@
 <strong><em>IFE JavaScript Test</em></strong>
 
-<br />预览效果:
+<br /><strong>预览效果:</strong>
+<br />
 <br /><strong>彬彬学院</strong>
 <br />1.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%201.html
 <br />2.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%202.html
