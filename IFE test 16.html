@@ -15,13 +15,14 @@
 		margin:0;
 	}
 	table{
-		margin:0 auto;
 		width:400px;
 		text-align:center;
+		float:right;
+		margin-right:300px;
 	}
 	form{
 		width:400px;
-		margin:0 auto;
+		margin-left:300px;
 		margin-top:100px;
 	}
 	</style>
@@ -43,8 +44,13 @@
 		<p>数学： <input type="text" id="math" name="math"></input></p>
 		<p>英语： <input type="text" id="en" name="english"></input></p>
 		<input type="button" id="getinput" value="提交"></input>
+		<input type="button" id="paixu1" value="语文排序"></input>
+		<input type="button" id="paixu2" value="数学排序"></input>
+		<input type="button" id="paixu3" value="英语排序"></input>
+		<input type="button" id="paixu4" value="总分排序"></input>
 	</form>
 	<script>
+		var newlist=new Array();//储存成绩
 		document.getElementById("getinput").onclick=function(){
 			var ch=document.getElementById("ch").value;
 			var name=document.getElementById("name").value;
@@ -69,8 +75,63 @@
 			newmath.innerHTML=math;
 			newen.innerHTML=en;
 			newtotal.innerHTML=total;
-		}
-		
+		}//读取提交的成绩做成表格
+		document.getElementById("paixu1").onclick=function(){
+			var nodelist=document.getElementById("table");
+			for(var i=1;i<nodelist.children.length;i++){
+				newlist[i-1]=nodelist.children[i].children[1].innerHTML;
+			}
+			newlist=sort(newlist);
+			for(var i=1;i<nodelist.children.length;i++){
+				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+			}
+		}//读取提交的语文成绩并排序
+		document.getElementById("paixu2").onclick=function(){
+			var nodelist=document.getElementById("table");
+			for(var i=1;i<nodelist.children.length;i++){
+				newlist[i-1]=nodelist.children[i].children[2].innerHTML;
+				alert(newlist[i-1]);
+			}
+			newlist=sort(newlist);
+			for(var i=1;i<nodelist.children.length;i++){
+				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+			}
+		}//读取提交的数学成绩并排序
+		document.getElementById("paixu3").onclick=function(){
+			var nodelist=document.getElementById("table");
+			for(var i=1;i<nodelist.children.length;i++){
+				newlist[i-1]=nodelist.children[i].children[3].innerHTML;
+				alert(newlist[i-1]);
+			}
+			newlist=sort(newlist);
+			for(var i=1;i<nodelist.children.length;i++){
+				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+			}
+		}//读取提交的英语成绩并排序
+		document.getElementById("paixu4").onclick=function(){
+			var nodelist=document.getElementById("table");
+			for(var i=1;i<nodelist.children.length;i++){
+				newlist[i-1]=nodelist.children[i].children[4].innerHTML;
+				alert(newlist[i-1]);
+			}
+			newlist=sort(newlist);
+			for(var i=1;i<nodelist.children.length;i++){
+				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+			}
+		}//读取提交的总分并排序
+		function sort(data){
+			var a;
+			for(var i=0;i<data.length;i++){
+				for(var j=0;j<data.length;j++){
+					if(data[i]>data[j]){
+						a=data[i];
+						data[i]=data[j];
+						data[j]=a;
+					}
+				}
+			}
+			return data;
+		}//排序函数
 	</script>
 </body>
 </html>
