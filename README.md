@@ -1,6 +1,7 @@
 <strong><em>IFE JavaScript Test</em></strong>
 
 <br />预览效果:
+<br /><strong>彬彬学院</strong>
 <br />1.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%201.html
 <br />2.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%202.html
 <br />3.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%203.html
@@ -10,6 +11,7 @@
 <br />7.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%207.html
 <br />8.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%208.html(施工中)
 <br />9.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%209.html(施工中)
+<br /><strong>耀耀学院</strong>
 <br />10.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2010.html
 <br />11.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2011.html
 <br />12.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2012.html
@@ -17,3 +19,12 @@
 <br />14.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2014.html(施工中)
 <br />15.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2015.html
 <br />16.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2016.html
+<br /><strong>百度糯米</strong>
+<br />17.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2017.html(施工中)
+<br />18.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2018.html(施工中)
+<br />19.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2019.html(施工中)
+<br />20.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2020.html(施工中)
+<br />21.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2021.html(施工中)
+<br />22.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2022.html(施工中)
+<br />23.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2023.html(施工中)
+<br />24.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2024.html(施工中)
