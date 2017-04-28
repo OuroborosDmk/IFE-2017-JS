@@ -13,6 +13,9 @@
 <br />7.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%207.html
 <br />8.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%208.html(施工中)
 <br />9.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%209.html(施工中)
+<br />
+<br />能不错的理解和运用DOM了---->LV.1
+<br />
 <br /><strong>耀耀学院</strong>
 <br />10.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2010.html
 <br />11.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%2011.html
