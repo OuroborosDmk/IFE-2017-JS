@@ -90,33 +90,30 @@
 			var nodelist=document.getElementById("table");
 			for(var i=1;i<nodelist.children.length;i++){
 				newlist[i-1]=nodelist.children[i].children[2].innerHTML;
-				alert(newlist[i-1]);
 			}
 			newlist=sort(newlist);
 			for(var i=1;i<nodelist.children.length;i++){
-				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+				nodelist.children[i].children[2].innerHTML=newlist[i-1];
 			}
 		}//读取提交的数学成绩并排序
 		document.getElementById("paixu3").onclick=function(){
 			var nodelist=document.getElementById("table");
 			for(var i=1;i<nodelist.children.length;i++){
 				newlist[i-1]=nodelist.children[i].children[3].innerHTML;
-				alert(newlist[i-1]);
 			}
 			newlist=sort(newlist);
 			for(var i=1;i<nodelist.children.length;i++){
-				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+				nodelist.children[i].children[3].innerHTML=newlist[i-1];
 			}
 		}//读取提交的英语成绩并排序
 		document.getElementById("paixu4").onclick=function(){
 			var nodelist=document.getElementById("table");
 			for(var i=1;i<nodelist.children.length;i++){
 				newlist[i-1]=nodelist.children[i].children[4].innerHTML;
-				alert(newlist[i-1]);
 			}
 			newlist=sort(newlist);
 			for(var i=1;i<nodelist.children.length;i++){
-				nodelist.children[i].children[1].innerHTML=newlist[i-1];
+				nodelist.children[i].children[4].innerHTML=newlist[i-1];
 			}
 		}//读取提交的总分并排序
 		function sort(data){
