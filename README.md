@@ -1,7 +1,7 @@
 <strong><em>IFE JavaScript Test</em></strong>
 
 <br />没打造好装备就去冒险的LV.0的勇者
-<br /><strong>预览效果:</strong>
+<br /><strong>预览效果:</strong>(有些预览有问题)
 <br />
 <br /><strong>彬彬学院</strong>
 <br />1.https://ouroborosdmk.github.io/IFE-2017-JS/IFE%20test%201.html
